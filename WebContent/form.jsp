@@ -7,7 +7,7 @@
 <body>
 <h1>INPUT 1</h1>
 
-<form method="GET" action="paragrafx">
+<form method="POST" action="Paragrafx">
 
 <textarea rows="2" cols="50" name="masukan"  maxlength="100" placeholder="INPUT">${test1}</textarea>
 <br>
@@ -20,7 +20,7 @@
 
 </form>
 
-<form method="GET" action="saveparagraf">
+<form method="POST" action="Saveparagraf">
 
 
  

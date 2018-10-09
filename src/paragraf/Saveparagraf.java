@@ -16,14 +16,14 @@ import java.sql.*;
 /**
  * Servlet implementation class saveparagraf
  */
-@WebServlet("/saveparagraf")
-public class saveparagraf extends HttpServlet {
+@WebServlet("/Saveparagraf")
+public class Saveparagraf extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public saveparagraf() {
+    public Saveparagraf() {
         super();
         // TODO Auto-generated constructor stub
     }

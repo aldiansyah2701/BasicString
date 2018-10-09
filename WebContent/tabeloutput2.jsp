@@ -1,5 +1,6 @@
 <%@page import="java.sql.Connection" %>
-<%@page import="paragraf.output2" %>
+<%@page import="paragraf.Output" %>
+<%@page import="paragraf.tabel2" %>
 <%@page import="java.sql.DriverManager" %>
 <%@page import="java.sql.SQLException" %>
 <%@page import="java.sql.ResultSet"%>
@@ -15,25 +16,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	Statement statement = null;
-	ResultSet resultSet = null;
 
-
-	output2 db = new output2();
-	Connection conn = db.getConnection();
-	if(conn == null){
-		out.println("connection failed");
-	}
-	else{
-		out.println("connection succed");
-	}
-	statement=conn.createStatement();
-	String sql ="SELECT NO,input,output,DATE_FORMAT(tanggal, '%d %M %Y') FROM output2";
-
-	resultSet = statement.executeQuery(sql);
-		
-		%>
 	<table border="2">
 	 
 	   <tr>
@@ -43,21 +26,32 @@
 	        <th>TANGGAL PROSES</th>
 	   </tr>	   
        <tbody>
-
-		<% while(resultSet.next()){ %>
+		
+		<% tabel2 tes = new tabel2();%>
+		 
+		<p hidden><%=tes.setData(1)%></p>
+		 
+		
+		
+		<% 
+		int x=1;
+		while(x!=tes.count()){ %>
 		<tr>
-		<td><%=resultSet.getString("no") %></td>
-		<td><%=resultSet.getString("input") %></td>
-		<td><%=resultSet.getString("output") %></td>
-		<td><%=resultSet.getString("DATE_FORMAT(tanggal, '%d %M %Y')") %></td>
+		<td><%=tes.databas1(x) %></td><%x++; %>
+		<td><%=tes.databas1(x) %></td><%x++; %>
+		<td><%=tes.databas1(x) %></td><%x++; %>
+		<td><%=tes.databas1(x) %></td><%x++; %>
 		</tr>
-		<% }%>
+		<% 
+		
+		}%>
 		
 		</tbody>
 	 </table>
-		<%
-	
-	
-%>
+ 
+
+
+
+ 
 </body>
 </html>

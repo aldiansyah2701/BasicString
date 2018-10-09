@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class output2 {
+public class Output {
 	
 	public Connection getConnection(){
 		try{

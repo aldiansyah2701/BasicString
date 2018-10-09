@@ -14,8 +14,8 @@ import java.sql.*;
 /**
  * Servlet implementation class paragrafx
  */
-@WebServlet("/paragrafx")
-public class paragrafx extends HttpServlet {
+@WebServlet("/Paragrafx")
+public class Paragrafx extends HttpServlet {
 	
 	String dataA="";
 	String dataB="";
@@ -26,7 +26,7 @@ public class paragrafx extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public paragrafx() {
+    public Paragrafx() {
         super();
         // TODO Auto-generated constructor stub
         
