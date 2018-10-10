@@ -17,13 +17,13 @@ import java.sql.*;
  * Servlet implementation class saveparagraf
  */
 @WebServlet("/Saveparagraf")
-public class Saveparagraf extends HttpServlet {
+public class SimpanParagraf extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Saveparagraf() {
+    public SimpanParagraf() {
         super();
         // TODO Auto-generated constructor stub
     }

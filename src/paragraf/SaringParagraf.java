@@ -15,7 +15,7 @@ import java.sql.*;
  * Servlet implementation class paragrafx
  */
 @WebServlet("/Paragrafx")
-public class Paragrafx extends HttpServlet {
+public class SaringParagraf extends HttpServlet {
 	
 	String dataA="";
 	String dataB="";
@@ -26,7 +26,7 @@ public class Paragrafx extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Paragrafx() {
+    public SaringParagraf() {
         super();
         // TODO Auto-generated constructor stub
         
@@ -44,25 +44,6 @@ public class Paragrafx extends HttpServlet {
 		
 		String test = request.getParameter("masukan");
 		dataA = test;
-		//response.getWriter().append(test);
-		
-		//response.getWriter().append("\n ---> \n");
-
-		//response.getWriter().append(htmlFilter(test));
-		
-		//response(response, test);
-		
-		//
-		
-		//String helloString = "aldi";
-		//char aChar = 's';
-		//helloString +=aChar;
-		//System.out.println(helloString);
-		
-		//String[] nama = new String[5];
-		//nama[1] = helloString;
-		
-		//System.out.println(nama[1]);
 		
 			dataB = htmlFilter(test);
 			
@@ -73,32 +54,12 @@ public class Paragrafx extends HttpServlet {
 			request.setAttribute("test3", dataparameter);
 			
 			dataparameter="";
-			//pisah(dataA);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/form.jsp");
 			dispatcher.forward(request, response);
 
 	}
-	
-	 
-	private static String pisah (String katas){
-		int xp=0;
-		/*while(true){
-			String cek = katas;
-			String[] cek1 = cek.split(".");
-			xp++;
-			System.out.println(xp);
-		}*/
-		
-		String str = "asdsadasdds-asdasdasdas";
-        String split[] = str.split("-");
-        System.out.println("The split parts of the String are");
-        for(String s:split){
-        	System.out.println(s);	
-        }
-        
-		 return (katas);
-	}
+
 	
 	   private static String htmlFilter(String message) {
 		      if (message == null) return null;
@@ -323,13 +284,13 @@ public class Paragrafx extends HttpServlet {
 		      
 		      
 		      //
-		      
 		      for(int i=0; i<x; i++){
 		    	  if(data1[i]=="|"){
 		    		  System.out.print(i);
 		    		  for(int u=i; u<x;u++){
 		    			  
-		    				data1[u]=data1[u+1];
+		    				data1[u]=swapFunction(data1[u],data1[u+1]);
+		    				
 		    		  }
 		    		  x--;
 		    	  }
@@ -339,12 +300,12 @@ public class Paragrafx extends HttpServlet {
 		    		  System.out.print(i);
 		    		  for(int u=i; u<x;u++){
 		    			  
-		    				data1[u]=data1[u+1];
+		    				data1[u]=swapFunction(data1[u],data1[u+1]);
+		    				
 		    		  }
 		    		  x--;
 		    	  }
 		      }
-		      //x=x-z;
 		      
 		      System.out.println("tes baru");
 		      for (int i = 0; i<x; i++){
@@ -394,6 +355,17 @@ public class Paragrafx extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 	}
+	
+	public static String swapFunction(String a, String b) {
+	      System.out.println("Before swapping(Inside), a = " + a + " b = " + b);
+	      
+	      // Swap n1 with n2
+	      String c = a;
+	      a = b;
+	      b = c;
+	      System.out.println("After swapping(Inside), a = " + a + " b = " + b);
+	      return a;
+	   }
 	
 
 	/**
